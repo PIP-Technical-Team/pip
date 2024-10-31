@@ -482,3 +482,9 @@ Version Control:
 *! -- Update help file
 *! version 0.10.11  <2024oct09>
 *! -- HOT FIX: parse `clear' option to pip_cp_check_args
+*! version 0.10.12  <2024oct31>
+*! -- update bibtex
+*! -- Standardize drop subcommands
+*! -- Incorporate `pip update, check'
+*! -- Fix installing 
+*! -- Update help file 
