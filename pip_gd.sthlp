@@ -144,7 +144,7 @@ Request poverty and inequality statistics for a particular welfare and populatio
 Request the fitted Lorenz curve based on the cumulative population and welfare shares above, with 50 points and graph resulting Lorenz curve.
 
 {phang2}
-{stata pip gd, cum_welfare(.00208 .01013 .03122 .07083 .12808 .23498 .34887 .51994 .6427 .79201 .86966 .91277 1) cum_population(.0092 .0339 .085 .164 .2609 .4133 .5497 .7196 .8196 .9174 .957 .9751 1) n_bins(50) n2disp(10)} 
+{stata pip gd, lorenz cum_welfare(.00208 .01013 .03122 .07083 .12808 .23498 .34887 .51994 .6427 .79201 .86966 .91277 1) cum_population(.0092 .0339 .085 .164 .2609 .4133 .5497 .7196 .8196 .9174 .957 .9751 1) n_bins(50) n2disp(10)} 
 
 {phang2}
 {stata twoway line welfare weight} 
