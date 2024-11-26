@@ -341,9 +341,9 @@ program define pip_get_version, rclass
 	mata: lines  = st_strscalar("pipado")
 	mata: lines  = ustrsplit(lines, "`=char(10)'")'
 	mata: pipdates = select(lines, regexm(lines, `"^\*!"'))
-	mata: pipver = select(pipdates, regexm(pipdates, `"<2[0-9]{3}[a-zA-Z]{3}[0-9]{2}"'))
+	mata: pipver = select(pipdates, regexm(pipdates, `"<2[0-9]+[a-zA-Z]+[0-9]+"'))
 	mata: pipver = pipver[rows(pipver)]
-	mata: regexm(pipver, "version +([0-9\.]+) +<([a-zA-Z0-9]+)>")
+	mata: regexm(pipver, "version[ ]+([0-9\.]+)[ ]+(<.+>)")
 	mata: st_local("pipver", regexs(1))
 
 	// save pipver as global pip_version
