@@ -488,3 +488,5 @@ Version Control:
 *! -- Incorporate `pip update, check'
 *! -- Fix installing 
 *! -- Update help file 
+*! version 0.10.13  <2024nov26>
+*! -- Fix issue with regex in Stata 18 
