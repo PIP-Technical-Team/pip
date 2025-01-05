@@ -54,7 +54,7 @@ program define pip_cl, rclass
 		//------------ download
 		pause cl> before get data 
 		pip_timer pip_cl.pip_get, on
-		pip_get, `clear' `cacheforce' `cachedir'
+		pip_get, `clear'
 		pip_timer pip_cl.pip_get, off
 		//------------ clean
 
@@ -106,13 +106,12 @@ program define pip_cl_check_args, rclass
 	FILLgaps                        ///
 	NOWcasts                        /// 
 	COVerage(string)                /// 
-	CLEAR(string) *                 /// 
+	CLEAR(string)                   /// 
 	pause                           /// 
 	POVCALNET_format                ///
 	replace                         ///
-	cacheforce                     ///
 	n2disp(passthru)                ///
-	cachedir(passthru)  *           ///
+	*                               ///
 	] 
 	
 	//========================================================

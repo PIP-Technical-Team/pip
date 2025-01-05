@@ -52,7 +52,7 @@ program define pip_cp, rclass
 		//========================================================		
 		//------------ download
 		pip_timer pip_cp.pip_get, on
-		pip_get, `clear' `cacheforce' `cachedir'
+		pip_get, `clear'
 		pip_timer pip_cp.pip_get, off
 
 		//------------ clean
@@ -91,9 +91,8 @@ program define pip_cp_check_args, rclass
 	SERver(string)                  /// 
 	pause                           /// 
 	replace                         ///
-	cacheforce                      ///
 	n2disp(passthru)                ///
-	cachedir(passthru)  *           ///
+	*                               ///
 	] 
 	
 	//========================================================
