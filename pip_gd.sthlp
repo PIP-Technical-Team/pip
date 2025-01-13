@@ -138,13 +138,13 @@ the frame where you had the original data.{p_end}
 Request poverty and inequality statistics for a particular welfare and population distribution, with a mean welfare of 2.911786.
 
 {phang2}
-{stata pip gd, cum_welfare(.0002 .0006 .0011 .0021 .0031 .0048 .0066 .0095 .0128 .0177 .0229 .0355 .0513 .0689 .0882) cum_population(.001 .003 .005 .009 .013 .019 .025 .034 .044 .0581 .0721 .1041 .1411 .1792 .2182) requested_mean(2.911786)} 
+{stata pip gd, cum_welfare(.00208 .01013 .03122 .07083 .12808 .23498 .34887 .51994 .6427 .79201 .86966 .91277 1) cum_population(.0092 .0339 .085 .164 .2609 .4133 .5497 .7196 .8196 .9174 .957 .9751 1) requested_mean(2.91178)} 
 
 {pstd}
 Request the fitted Lorenz curve based on the cumulative population and welfare shares above, with 50 points and graph resulting Lorenz curve.
 
 {phang2}
-{stata pip gd, lorenz cum_welfare(.0002 .0006 .0011 .0021 .0031 .0048 .0066 .0095 .0128 .0177 .0229 .0355 .0513 .0689 .0882) cum_population(.001 .003 .005 .009 .013 .019 .025 .034 .044 .0581 .0721 .1041 .1411 .1792 .2182) n_bins(50) n2disp(10)} 
+{stata pip gd, lorenz cum_welfare(.00208 .01013 .03122 .07083 .12808 .23498 .34887 .51994 .6427 .79201 .86966 .91277 1) cum_population(.0092 .0339 .085 .164 .2609 .4133 .5497 .7196 .8196 .9174 .957 .9751 1) n_bins(50) n2disp(10)} 
 
 {phang2}
 {stata twoway line welfare weight} 
@@ -153,7 +153,7 @@ Request the fitted Lorenz curve based on the cumulative population and welfare s
 Request the regression parameters used to estimate the Lorenz curve based on the cumulative population and welfare shares above.
 
 {phang2}
-{stata pip gd, params cum_welfare(.0002 .0006 .0011 .0021 .0031 .0048 .0066 .0095 .0128 .0177 .0229 .0355 .0513 .0689 .0882) cum_population(.001 .003 .005 .009 .013 .019 .025 .034 .044 .0581 .0721 .1041 .1411 .1792 .2182)} 
+{stata pip gd, params cum_welfare(.00208 .01013 .03122 .07083 .12808 .23498 .34887 .51994 .6427 .79201 .86966 .91277 1) cum_population(.0092 .0339 .085 .164 .2609 .4133 .5497 .7196 .8196 .9174 .957 .9751 1)} 
 
 {marker ex_frame}{...}
 {ul:Using current frame}

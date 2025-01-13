@@ -256,10 +256,11 @@ program define pip_gd_check_args, rclass
 		local sum_wel = ``element''
 	}
 
-	if `sum_pop'!=1|`sum_wel'!=1 {
+	if (round(`sum_pop', .001) != 1 | round(`sum_wel', .001) != 1) {
 		local sp = string(`sum_pop', "%05.3f")
 		local sw = string(`sum_wel', "%05.3f")
-		dis "Warning: cum_population sums to `sp' and cumulative welfare sums to `sw'."
+		dis as error "{it: cum_population} sums to `sp' and {it: cumulative} welfare sums to `sw'. Both must sum up to 1."
+		exit 124
 	}
 
 	//Return cumulative welfare and population arguments

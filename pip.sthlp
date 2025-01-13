@@ -87,7 +87,7 @@ The rest of this document contains general information about PIP and the {cmd:pi
 {title:General Options}
 
 {pstd}
-The options below work for any subcommad that returns vintaged data
+The options below work for any subcommand that returns vintaged data
 (e.g., {cmd:cl}, {cmd:wb}, {cmd:cp}, {cmd:gd}, {cmd:tables})
 
 {marker general_options}{...}

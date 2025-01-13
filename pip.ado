@@ -25,14 +25,15 @@ program define pip, rclass
 
 	//------------ Parsing args
 	pip_parseopts `0'   // parse whatever the user gives
+
 	local returnnames "`r(returnnames)'" // name of all returned object
 	local optnames    "`r(optnames)'"    // names of options (after the comma)
 	mata: pip_retlist2locals("`returnnames'") // convert return to locals
-	
+
 	if ("`subcmd'" == "") local subcmd "cl"  // default country-level 
 	
 	pip_split_options `optnames'  // get general options and estimation opts
-	
+
 	mata: pip_locals2call("`r(gen_opts)'", "gen_opts")
 	mata: pip_locals2call("`r(est_opts)'", "est_opts")
 
@@ -99,23 +100,30 @@ program define pip, rclass
 	
 	
 	//------------Drops
-	if regexm("`subcmd'", "^dropframe") {
-		pip_drop frame, `frame_prefix'
-		noi pip_timer pip, off
+	if regexm("`subcmd'", "^drop") {
+		tokenize `subcmd'
+		if "`2'"=="frame" {
+			if ("`frame_prefix'" == "") local frame_prefix "frame_prefix(_pip_)"
+			pip_drop frame, `frame_prefix'
+			noi pip_timer pip, off
+		}
+		else if "`2'"=="global" {
+			pip_drop global
+			pip_timer pip, off
+		}
+		else {
+			noi disp "{err}subcommand {it:drop} must be used with {it:frame} or {it:global}." _n /* 
+			*/ "E.x., {cmd:pip drop frame} or {cmd:pip drop global}."
+			error
+		}
 		exit
 	}
-	
-	if regexm("`subcmd'", "^dropglobal") {
-		pip_drop global
-		pip_timer pip, off
-		exit
-	}
-	
+
 	//------------Install and Uninstall
 	if regexm("`subcmd'", "^install") {
 		if ( ("`gh'" == "" & "`ssc'" == "") | /* 
 		*/  ("`gh'" != "" & "`ssc'" != "") ) {
-			noi disp "{err}subcommand {it:install} must be use "  /* 
+			noi disp "{err}subcommand {it:install} must be use "    /* 
 			*/	 "with either {it:ssc} or {it:gh}" _n               /* 
 			*/  "E.x., {cmd:pip install, ssc} or {cmd:pip install, gh}."
 			error
@@ -133,7 +141,6 @@ program define pip, rclass
 		noi pip_timer pip, off
 		exit
 	}
-	
 	if regexm("`subcmd'", "^update") {
 		noi pip_update, `path' `pause'
 		pip_timer pip, off
@@ -426,3 +433,11 @@ Version Control:
 *! -- Update help file
 *! version 0.10.11  <2024oct09>
 *! -- HOT FIX: parse `clear' option to pip_cp_check_args
+*! version 0.10.12  <2024oct31>
+*! -- update bibtex
+*! -- Standardize drop subcommands
+*! -- Incorporate `pip update, check'
+*! -- Fix installing 
+*! -- Update help file 
+*! version 0.10.13  <2024nov26>
+*! -- Fix issue with regex in Stata 18 
