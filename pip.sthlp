@@ -368,7 +368,7 @@ povcalnet command, which was developed with the help of Espen Prydz, Jorge Soler
 {marker authors}{...}
 {title:Authors}
 
-{p 4 4 4}R.Andres Castaneda, The World Bank{p_end}
+{p 4 4 4}R.Andres Castaneda, Data Group, Development Economics, The World Bank{p_end}
 {p 6 6 4}Email: {browse "mailto: acastanedaa@worldbank.org":  acastanedaa@worldbank.org}{p_end}
 {p 6 6 4}GitHub:{browse "https://github.com/randrescastaneda": randrescastaneda }{p_end}
 
@@ -404,8 +404,8 @@ https://worldbank.github.io/pip/ {p_end}
 
 {title:Thanks for citing {cmd:pip} data as follows}
 
-{p 4 8 2} World Bank. (2023). Poverty and Inequality Platform (version 0.10.11)
-[Data set]. World Bank Group. www.pip.worldbank.org. Accessed  5 Jan 2025.{p_end}
+{p 4 8 2} World Bank. (2023). Poverty and Inequality Platform (version 0.10.14)
+[Data set]. World Bank Group. www.pip.worldbank.org. Accessed  14 Jan 2025.{p_end}
 
 {p 4 8 2}Available version_IDs:{p_end}
 {p 4 8 2}2017 PPPs: 20230919_2017_01_02_PROD{p_end}
