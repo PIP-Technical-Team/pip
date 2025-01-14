@@ -33,7 +33,7 @@ version 16.1
 
 qui {
 	if ("${pip_ado_version}" == "") {
-		
+
 		findfile pip.ado
 		scalar pipado = fileread("`r(fn)'")
 		
@@ -201,5 +201,4 @@ Notes:
 3.
 
 Version Control:
-
 

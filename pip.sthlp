@@ -38,7 +38,6 @@
 {synopt :{helpb pip_cp:cp}}Country Profile estimates. {help pip_cp##options:options}{p_end}
 {synopt :{helpb pip_gd:gd}}Grouped Data estimates. {help pip_gd##options:options}{p_end}
 {synopt :{helpb pip_tables:tables}}Clickable list of auxiliary tables. {help pip_tables##options:options}{p_end}
-{synopt :{helpb pip_cache:cache}}Manage local cache. {help pip_cache##options:options}{p_end}
 {synopt :{helpb pip_print:print}}Print useful information. {help pip_print##options:options}{p_end}
 {synopt :{helpb pip_install:[un]install}}Installs the stable version of pip from SSC
 ({cmd:pip install ssc}) or the development version from GitHub ({cmd:pip install gh}).{p_end}
@@ -106,7 +105,6 @@ these three parameters uniquely identifies a dataset.{p_end}
 {synopt :{opt ser:ver(string)}{err:*}}Name of server to query (e.g, prod, dev, qa). See description of each server {bf:{help pip_note:here}}.{p_end}
 {synopt :{opt clear}}Replaces data in memory.{p_end}
 {synopt :{opt n2d:isp}}Number of rows to display. (default 1).{p_end}
-{synopt :{opt cachedir(path)}}Cache directory{p_end}
 
 {pstd}
 {err:*Note}: The {cmd:server()} and {cmd:identity()} options are available internally only for World Bank staff upon request to the
@@ -190,18 +188,6 @@ and should not cause any concern. However, make sure you save the frames that yo
 You can do that by typing {stata frames dir}. Frames created by {cmd:pip} are prefixed by {it:_pip} and are
 marked by an {it:*}, meaning they have not been saved. If you do not wish to save any frames in use, just click
 "Exit without saving." You can also delete all PIP data in memory using the command {stata pip cleanup}.
-
-{ul:Cache memory}
-
-{pstd}
-By default, {cmd:pip} will create cache data of all the queries you make. The first time you
-use {cmd:pip} you will have the option to store cache data on your local machine
-or in any drive Stata has access to. By default, {cmd:pip} will check whether it could
-save cache data in your PERSONAL directory (see {help sysdir: search path}). In case it can't, it will try in PLUS, then
-in your current directory and then in SITE. The first time you execute {cmd:pip}, you are
-required to either confirm the default cache directory or provide your own directory
-path. Also you can opt out and not save cache data. Just follow the instructions of
-the pop-up messages.
 
 {ul:pip_setup.do}
 
@@ -382,7 +368,7 @@ povcalnet command, which was developed with the help of Espen Prydz, Jorge Soler
 {marker authors}{...}
 {title:Authors}
 
-{p 4 4 4}R.Andres Castaneda, The World Bank{p_end}
+{p 4 4 4}R.Andres Castaneda, Data Group, Development Economics, The World Bank{p_end}
 {p 6 6 4}Email: {browse "mailto: acastanedaa@worldbank.org":  acastanedaa@worldbank.org}{p_end}
 {p 6 6 4}GitHub:{browse "https://github.com/randrescastaneda": randrescastaneda }{p_end}
 
@@ -418,8 +404,8 @@ https://worldbank.github.io/pip/ {p_end}
 
 {title:Thanks for citing {cmd:pip} data as follows}
 
-{p 4 8 2} World Bank. (2023). Poverty and Inequality Platform (version 0.10.12)
-[Data set]. World Bank Group. www.pip.worldbank.org. Accessed  7 Nov 2024.{p_end}
+{p 4 8 2} World Bank. (2023). Poverty and Inequality Platform (version 0.10.14)
+[Data set]. World Bank Group. www.pip.worldbank.org. Accessed  14 Jan 2025.{p_end}
 
 {p 4 8 2}Available version_IDs:{p_end}
 {p 4 8 2}2017 PPPs: 20230919_2017_01_02_PROD{p_end}

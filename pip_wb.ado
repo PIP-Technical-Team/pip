@@ -50,7 +50,7 @@ program define pip_wb, rclass
 		
 		//------------ download
 		pip_timer pip_wb.pip_get, on
-		pip_get, `clear' `cacheforce' `cachedir'
+		pip_get, `clear'
 		pip_timer pip_wb.pip_get, off
 		
 		//------------ clean
@@ -96,11 +96,10 @@ program define pip_wb_check_args, rclass
 	pause                           /// 
 	POVCALNET_format                ///
 	replace                         ///
-	cacheforce                      ///
 	FILLgaps                        ///
 	NOWcasts						///
 	n2disp(passthru)                ///
-	cachedir(passthru) *            ///
+    *                               ///
 	] 
 	
 	//========================================================

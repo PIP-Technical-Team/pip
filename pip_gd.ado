@@ -70,7 +70,7 @@ program define pip_gd,  rclass
 		qui frame create _pip_gd
 		frame _pip_gd {
 			pip_timer pip_gd.pip_get, on
-			pip_get, `cacheforce' `clear' `cachedir'
+			pip_get, `clear'
 			pip_timer pip_gd.pip_get, off
 
 			//Clean
@@ -124,9 +124,8 @@ program define pip_gd_check_args, rclass
 	clear                           /// 
 	pause                           ///
 	replace                         /// 
-	cacheforce                      ///
 	n2disp(passthru)                ///
-	cachedir(passthru) *            ///  
+	*                               ///  
 	]
 
 	//Set-up

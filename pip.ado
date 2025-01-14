@@ -22,7 +22,7 @@ program define pip, rclass
 	Program set up
 	==================================================*/
 	pip_setup
-	
+
 	//------------ Parsing args
 	pip_parseopts `0'   // parse whatever the user gives
 
@@ -86,12 +86,6 @@ program define pip, rclass
 		if ("`create'" != "") {
 			pip_setup create
 			noi disp "{res:Setup done!}"
-			pip_timer pip, off 
-			exit
-		}
-		
-		if ("`cachedir'" != "") {
-			pip_setup cachedir, `cachedir'
 			pip_timer pip, off 
 			exit
 		}
@@ -187,13 +181,6 @@ program define pip, rclass
 			pip_timer pip, off 
 			exit
 		}	
-		if ("`cache'" != "") {
-			//------------ Cache info
-			pip_cache info
-			return add
-			pip_timer pip, off 
-			exit
-		}
 		if ("`setup'" != "") {
 			//------------ Cache info
 			pip_setup display
@@ -205,43 +192,7 @@ program define pip, rclass
 		 */ "see {it:{help pip##print_options:print options}}"
 		 error
 	}
-	
-	//========================================================
-	// Cache 
-	//========================================================
-	if ("`subcmd'" == "cache") {
-		if ("`delete'" != "") {
-			pip_cache `delete', `cachedir'
-			pip_timer pip, off 
-			exit
-		}
-		if ("`iscache'" != "") {
-			pip_cache `iscache'
-			return add
-			pip_timer pip, off 
-			exit
-		}
-		if ("`info'" != "") {
-			pip_cache info
-			return add
-			pip_timer pip, off 
-			exit
-		}
-		if ("`inventory'" != "" | "`metadata'" != "") {
-			pip_cache inventory
-			pip_timer pip, off 
-			exit
-		}
-		if ("`setup'" != "") {
-			pip_setup cachedir, `cachedir'
-			pip_timer pip, off 
-			exit
-		}
 		
-		pip_timer pip, off
-		exit
-	}
-	
 	//------------Info
 	if regexm("`subcmd'", "^info") {
 		noi pip_info, `clear' `pause' `release' `ppp_year' /* 
@@ -291,22 +242,22 @@ program define pip, rclass
 		
 		//------------ Country lavel
 		if ("`subcmd'" == "cl") {
-			noi pip_cl, `est_opts' `n2disp' `povcalnet_format' `cachedir'
+			noi pip_cl, `est_opts' `n2disp' `povcalnet_format'
 			noi pip_timer pip, off `printtimer' 
 		}
 		//------------ World Bank Aggregate
 		else if ("`subcmd'" == "wb") {
-			noi pip_wb, `est_opts' `n2disp' `povcalnet_format' `cachedir'
+			noi pip_wb, `est_opts' `n2disp' `povcalnet_format'
 			noi pip_timer pip, off `printtimer'
 		}
 		//------------ Country Profile
 		else if ("`subcmd'" == "cp") {
-			pip_cp, `est_opts' `n2disp' `cachedir'
+			pip_cp, `est_opts' `n2disp'
 			noi pip_timer pip, off `printtimer'
 		}
 		//------------ Grouped data
 		else if ("`subcmd'" == "gd") {
-			noi pip_gd, `est_opts'  `n2disp' `cachedir'
+			noi pip_gd, `est_opts'  `n2disp'
 			return add
 			noi pip_timer pip, off `printtimer'
 		}
