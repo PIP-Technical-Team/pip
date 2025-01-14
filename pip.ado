@@ -441,3 +441,6 @@ Version Control:
 *! -- Update help file 
 *! version 0.10.13  <2024nov26>
 *! -- Fix issue with regex in Stata 18 
+*! version 0.10.14  <2025jan14>
+*! -- remove internal caching
+
