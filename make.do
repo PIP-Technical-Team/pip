@@ -45,11 +45,11 @@ disp "`toins'"
 
 
 make pip, replace toc pkg                                  ///  readme
-	version(0.10.13)                                   ///
-    license("MIT")                                         ///
-    author("R.Andres Castaneda")                           ///
-    affiliation("The World Bank")                          ///
-    email("acastanedaa@worldbank.org")                     ///
+	version(0.10.14)                                                       ///
+    license("MIT")                                                         ///
+    author(`""R.Andres Castaneda" "Damian Clarke""')                       ///
+    affiliation(`" "The World Bank" "University of Chile & University of Exeter""')                                                         ///
+    email(`"acastanedaa@worldbank.org" "dclarke4@worldbank.org, dclarke@fen.uchile.cl""')                     ///
     url("")                                                ///
     title("Poverty and Inequality Platform Stata wrapper") ///
     description("World Bank PIP API Stata wrapper")        ///
